@@ -96,14 +96,16 @@ class FairDistributionCurve(FairBaseCurve):
 
         """
         # Setup plots
+        
         fig, ax = plt.subplots(figsize=(16, 6))
         plt.subplots_adjust(bottom=.2)
         ax.axes.set_title('Risk Distribution', fontsize=20)
+        ax.locator_params(axis='x', nbins=25)
         # Format X axis
         ax.axes.xaxis.set_major_formatter(StrMethodFormatter(self._currency_prefix + '{x:,.0f}'))
         ax.axes.xaxis.set_tick_params(rotation=-45)
         ax.set_ylabel('Frequency Histogram')
-        for tick in ax.axes.xaxis.get_major_ticks(numticks=25):
+        for tick in ax.axes.xaxis.get_major_ticks():
             tick.label.set_horizontalalignment('left')
         # Draw histrogram for each model
         legend_labels = []
