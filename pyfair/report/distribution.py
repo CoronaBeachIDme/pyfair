@@ -104,6 +104,7 @@ class FairDistributionCurve(FairBaseCurve):
         # Format X axis
         ax.axes.xaxis.set_major_formatter(StrMethodFormatter(self._currency_prefix + '{x:,.0f}'))
         ax.axes.xaxis.set_tick_params(rotation=-45)
+        ax.axes.grid(color='r', linestyle='-', linewidth=2)
         ax.set_ylabel('Frequency Histogram')
         for tick in ax.axes.xaxis.get_major_ticks():
             tick.label.set_horizontalalignment('left')
