@@ -60,7 +60,7 @@ class FairDistributionCurve(FairBaseCurve):
         model = self._input[model_name]
         data = model.export_results().loc[:, target]
         # Set up ax and params
-        fig, ax = plt.subplots(figsize=(6, 1))
+        fig, ax = plt.subplots(figsize=(25, 1))
         ax.set_xlim(0, data.max())
         # Set spines and axis invisible
         for spine in ['left', 'right', 'top', 'bottom']:
